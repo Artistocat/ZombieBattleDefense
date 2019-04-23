@@ -9,8 +9,6 @@
 import UIKit
 
 class Zombie: NSObject {
-    
-    var z: Zombie
     var health: Int
     init(z: Zombie, health: Int) {
         self.health = health

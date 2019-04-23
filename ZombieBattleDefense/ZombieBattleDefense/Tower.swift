@@ -9,7 +9,6 @@
 import UIKit
 
 class Tower: NSObject {
-    var t: Tower
     var damage: Int
     init(t: Tower, damage: Int) {
         self.damage = damage
