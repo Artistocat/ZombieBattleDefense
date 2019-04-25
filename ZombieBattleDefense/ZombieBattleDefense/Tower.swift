@@ -10,8 +10,7 @@ import UIKit
 
 class Tower: NSObject {
     var damage: Int
-    init(t: Tower, damage: Int) {
+    init(damage: Int) {
         self.damage = damage
-        self.t = t
     }
 }

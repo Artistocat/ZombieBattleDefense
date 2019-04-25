@@ -10,9 +10,8 @@ import UIKit
 
 class Zombie: NSObject {
     var health: Int
-    init(z: Zombie, health: Int) {
+    init(health: Int) {
         self.health = health
-        self.z = z
     }
 
 }
