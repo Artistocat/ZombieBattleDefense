@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="134" y="940"/>
         </scene>
-        <!--Searching-->
+        <!--Searching For Partner-->
         <scene sceneID="9BV-4D-eBG">
             <objects>
-                <viewController title="Searching" id="8EJ-vx-xBU" sceneMemberID="viewController">
+                <viewController title="Searching For Partner" id="8EJ-vx-xBU" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1KR-tk-VHY">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
