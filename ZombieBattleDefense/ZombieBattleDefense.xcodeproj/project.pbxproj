@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3401CB64226F94A3005D1C13 /* ZombieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401CB63226F94A3005D1C13 /* ZombieService.swift */; };
+		34AF9BFD2278D1DC00898DDC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF9BFC2278D1DC00898DDC /* GameScene.swift */; };
 		34BAB40A2267AB0E004C052E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BAB4092267AB0E004C052E /* AppDelegate.swift */; };
 		34BAB40C2267AB0E004C052E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BAB40B2267AB0E004C052E /* ViewController.swift */; };
 		34BAB40F2267AB0E004C052E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BAB40D2267AB0E004C052E /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3401CB63226F94A3005D1C13 /* ZombieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieService.swift; sourceTree = "<group>"; };
+		34AF9BFC2278D1DC00898DDC /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		34BAB4062267AB0E004C052E /* ZombieBattleDefense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieBattleDefense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BAB4092267AB0E004C052E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BAB40B2267AB0E004C052E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				3401CB63226F94A3005D1C13 /* ZombieService.swift */,
 				34BAB40B2267AB0E004C052E /* ViewController.swift */,
 				34E7909022723259005F0AE3 /* GameViewController.swift */,
+				34AF9BFC2278D1DC00898DDC /* GameScene.swift */,
 				638DECE3226F91B000D027C1 /* Zombie.swift */,
 				638DECE5226F991800D027C1 /* Tower.swift */,
 				34BAB40D2267AB0E004C052E /* Main.storyboard */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34AF9BFD2278D1DC00898DDC /* GameScene.swift in Sources */,
 				34E7909122723259005F0AE3 /* GameViewController.swift in Sources */,
 				3401CB64226F94A3005D1C13 /* ZombieService.swift in Sources */,
 				34BAB40C2267AB0E004C052E /* ViewController.swift in Sources */,
