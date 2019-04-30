@@ -9,9 +9,20 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+}
+extension GameViewController : ZombieServiceDelegate {
+    
+    func connectedDevicesChanged(manager: ZombieService, connectedDevices: [String]) {
+        OperationQueue.main.addOperation {
+            //self.connectionsLabel.text = "\(connectedDevices)"
+        }
+    }
+    
+    func zombieReceived(manager: ZombieService, zombieString: String) {
+        //TODO
     }
 }

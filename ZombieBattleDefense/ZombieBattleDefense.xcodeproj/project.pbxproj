@@ -64,13 +64,13 @@
 				34BAB4092267AB0E004C052E /* AppDelegate.swift */,
 				3401CB63226F94A3005D1C13 /* ZombieService.swift */,
 				34BAB40B2267AB0E004C052E /* ViewController.swift */,
+				34E7909022723259005F0AE3 /* GameViewController.swift */,
 				638DECE3226F91B000D027C1 /* Zombie.swift */,
 				638DECE5226F991800D027C1 /* Tower.swift */,
 				34BAB40D2267AB0E004C052E /* Main.storyboard */,
 				34BAB4102267AB11004C052E /* Assets.xcassets */,
 				34BAB4122267AB11004C052E /* LaunchScreen.storyboard */,
 				34BAB4152267AB11004C052E /* Info.plist */,
-				34E7909022723259005F0AE3 /* GameViewController.swift */,
 			);
 			path = ZombieBattleDefense;
 			sourceTree = "<group>";

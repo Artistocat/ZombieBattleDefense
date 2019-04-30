@@ -11,7 +11,7 @@ import MultipeerConnectivity
 
 protocol ZombieServiceDelegate {
     func connectedDevicesChanged(manager : ZombieService, connectedDevices: [String])
-    func zombieChanged(manager : ZombieService, zombieString: String)
+    func zombieReceived(manager : ZombieService, zombieString: String)
 }
 class ZombieService: NSObject{
     
@@ -70,7 +70,7 @@ extension ZombieService: MCSessionDelegate{
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         NSLog("%@", "didReceiveData: \(data.count) bytes")
         let str = String(data: data, encoding: .utf8)!
-        self.delegate?.zombieChanged(manager: self, zombieString: str)
+        self.delegate?.zombieReceived(manager: self, zombieString: str)
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

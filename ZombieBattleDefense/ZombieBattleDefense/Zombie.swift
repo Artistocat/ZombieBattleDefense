@@ -10,6 +10,8 @@ import UIKit
 
 class Zombie: NSObject {
     var health: Int
+    var speed: Int
+    
     init(health: Int) {
         self.health = health
     }
