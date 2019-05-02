@@ -36,8 +36,6 @@ class Tower: NSObject {
         addChild(machineGunSprite)
          
         updateCannon(cannonSprite, validLocation())
-        
-         
         */
     }
  
@@ -54,6 +52,7 @@ class Tower: NSObject {
         
     }
     
+    //location is updated for the placement, but is no longer updated once it is placed
     //update location of CannonSprite
     func updateCannon(_ node: SKSpriteNode, location: CGPoint)
     {
