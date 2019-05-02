@@ -72,7 +72,7 @@ extension ZombieService: MCSessionDelegate{
         case MCSessionState.connected:
             print("Connected to session: \(session)")
             connected=true
-            delegate?.connected(peerID: peerID)
+           
             
         case MCSessionState.connecting:
             print("Connecting to session: \(session)")
@@ -113,7 +113,7 @@ extension ZombieService: MCNearbyServiceAdvertiserDelegate
         print("got invitation")
         //NSLog("%@", "didReceiveInvitationFromPeer \(peerID)")
         invitationHandler(true, self.session)
-        self.delegate?.connected(peerID: peerID)
+        
         //AdvertiseViewController.connected(PeerID: peerID)
         serviceAdvertiser.stopAdvertisingPeer()
     }

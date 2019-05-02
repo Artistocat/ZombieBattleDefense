@@ -8,21 +8,7 @@
 
 import UIKit
 import MultipeerConnectivity
-class BrowseViewController: UIViewController, ZombieServiceDelegate {
-    func connected(peerID: MCPeerID) {
-        print("call")
-        joinLabel.text = "\(peerID.displayName) is connected"
-    }
-    
-    
-    func connectedDevicesChanged(manager: ZombieService, connectedDevices: [String])
-    {
-        
-    }
-    
-    func zombieChanged(manager: ZombieService, zombieString: String) {
-        
-    }
+class BrowseViewController: UIViewController{
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {

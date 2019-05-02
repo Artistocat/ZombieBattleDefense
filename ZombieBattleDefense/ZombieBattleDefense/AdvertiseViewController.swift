@@ -8,20 +8,8 @@
 
 import UIKit
 import MultipeerConnectivity
-class AdvertiseViewController: UIViewController, ZombieServiceDelegate {
-    func connected(peerID: MCPeerID) {
-        hostLabel.text="\(peerID.displayName) is connected"
-    }
-    
-    func connectedDevicesChanged(manager: ZombieService, connectedDevices: [String])
-    {
-        
-    }
-    
-    func zombieChanged(manager: ZombieService, zombieString: String) {
-        
-    }
-    
+class AdvertiseViewController: UIViewController{
+   
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
