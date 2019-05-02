@@ -11,7 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     let zombieService = ZombieService()
-    //var zombies = [Zombie]
+    var zombies = [Zombie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,27 @@ extension GameViewController : ZombieServiceDelegate {
     func zombieReceived(manager: ZombieService, zombieString: String) {
         //TODO
         //zombieString will be formatted like so: s000h0000 where s stands for speed the zero's can be any number with any length which is the speed and h representing the health in much the same way
+        var speedStr = ""
+        var healthStr = ""
+        var passedH = false
+        for character in zombieString {
+            if character == "s" {
+                continue
+            }
+            if character == "h" {
+                passedH = true
+                continue
+            }
+            if passedH {
+                healthStr += String(character)
+            }
+            else {
+                speedStr += String(character)
+            }
+        }
         
+        let speed = Int(speedStr)
+        let health = Int(healthStr)
+        zombies.append(Zombie(health: health!, speed: speed!))
     }
 }

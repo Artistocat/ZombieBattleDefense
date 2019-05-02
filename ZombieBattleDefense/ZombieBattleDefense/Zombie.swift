@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreMotion
-import UIKit
+import SpriteKit
 
 class Zombie: NSObject {
     var health: Int
@@ -23,8 +23,8 @@ class Zombie: NSObject {
     //make sprite nodes appear on screen. All zombies will start at the same spot, the beginning of the track
     func view()
     {
-        zombieSprite.position = CGPoint(x: 0, y: 300) //TODO set the x and y location to the beginning of the track. x will probably be 0
-        addChild(zombieSprite)
+        Zombie.zombieSprite.position = CGPoint(x: 0, y: 300) //TODO set the x and y location to the beginning of the track. x will probably be 0
+        //addChild(zombieSprite)
     }
     
     //update location of zombie.
