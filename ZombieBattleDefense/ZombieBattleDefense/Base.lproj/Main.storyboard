@@ -17,6 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz5-j4-L06">
+                                <rect key="frame" x="20" y="0.0" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Host"/>
+                                <connections>
+                                    <segue destination="DbU-WY-fAh" kind="show" id="Kao-Al-xfg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGn-UG-MEt">
+                                <rect key="frame" x="21" y="52" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join"/>
+                                <connections>
+                                    <segue destination="8EJ-vx-xBU" kind="show" id="qO0-9d-Bc9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -28,13 +46,26 @@
         <!--Hosting-->
         <scene sceneID="7ft-4P-MQ0">
             <objects>
-                <viewController title="Hosting" id="DbU-WY-fAh" sceneMemberID="viewController">
+                <viewController title="Hosting" id="DbU-WY-fAh" customClass="AdvertiseViewController" customModule="ZombieBattleDefense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LQm-jD-7iN">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8T-t1-xuu">
+                                <rect key="frame" x="30" y="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="66k-Rv-KMr"/>
                     </view>
+                    <connections>
+                        <outlet property="hostLabel" destination="q8T-t1-xuu" id="pJj-58-BGa"/>
+                        <segue destination="LeK-c2-Qn4" kind="show" identifier="HostGame" id="WPo-f5-9Fp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uti-f2-2Rs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,13 +74,26 @@
         <!--Searching-->
         <scene sceneID="9BV-4D-eBG">
             <objects>
-                <viewController title="Searching" id="8EJ-vx-xBU" sceneMemberID="viewController">
+                <viewController title="Searching" id="8EJ-vx-xBU" customClass="BrowseViewController" customModule="ZombieBattleDefense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1KR-tk-VHY">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fe3-MH-nyC">
+                                <rect key="frame" x="29" y="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8K5-7H-ZZv"/>
                     </view>
+                    <connections>
+                        <outlet property="joinLabel" destination="fe3-MH-nyC" id="WYx-Xj-BvX"/>
+                        <segue destination="LeK-c2-Qn4" kind="show" identifier="JoinGame" id="z99-Ej-QBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aK1-ou-FFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,4 +115,7 @@
             <point key="canvasLocation" x="806" y="940"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="z99-Ej-QBE"/>
+    </inferredMetricsTieBreakers>
 </document>
