@@ -94,19 +94,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jca-Ig-Zby">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="360"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineGun" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-EI-KTU">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="5Cm-4d-wil"/>
-                                                    <constraint firstAttribute="height" constant="60" id="eU6-FH-a2g"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="74U-P6-cqJ" appends="YES" id="QxH-Fh-CMw"/>
-                                                </connections>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gunTower" translatesAutoresizingMaskIntoConstraints="NO" id="NEX-4K-OkC">
-                                                <rect key="frame" x="0.0" y="60" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="MvT-si-JaW"/>
@@ -117,7 +106,7 @@
                                                 </connections>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cannon" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-pp-A2b">
-                                                <rect key="frame" x="0.0" y="120" width="60" height="60"/>
+                                                <rect key="frame" x="0.0" y="60" width="60" height="60"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="9Aa-3A-Svd"/>
@@ -127,7 +116,18 @@
                                                     <outletCollection property="gestureRecognizers" destination="RBx-dz-2Jg" appends="YES" id="eWL-KT-bhM"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YPc-bw-TNm">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineGun" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-EI-KTU">
+                                                <rect key="frame" x="0.0" y="120" width="60" height="60"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="5Cm-4d-wil"/>
+                                                    <constraint firstAttribute="height" constant="60" id="eU6-FH-a2g"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="74U-P6-cqJ" appends="YES" id="QxH-Fh-CMw"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landmine" translatesAutoresizingMaskIntoConstraints="NO" id="YPc-bw-TNm">
                                                 <rect key="frame" x="0.0" y="180" width="60" height="60"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -138,7 +138,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="T2I-68-5eD" appends="YES" id="SIX-Zd-QOo"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ct3-mL-Vog">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sniper" translatesAutoresizingMaskIntoConstraints="NO" id="ct3-mL-Vog">
                                                 <rect key="frame" x="0.0" y="240" width="60" height="60"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -149,7 +149,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="GjM-qq-NQC" appends="YES" id="HgK-pf-ggF"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-CH-iPT">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tacticalSpike" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-CH-iPT">
                                                 <rect key="frame" x="0.0" y="300" width="60" height="60"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -217,7 +217,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-ft-pXD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-ft-pXD">
                                 <rect key="frame" x="133" y="15" width="534" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -244,9 +244,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="378" height="268"/>
-        <image name="gunTower" width="210" height="139"/>
-        <image name="machineGun" width="378" height="262"/>
+        <image name="Cannon" width="305" height="165"/>
+        <image name="gunTower" width="185" height="272"/>
+        <image name="landmine" width="231" height="218"/>
+        <image name="machineGun" width="900" height="580"/>
+        <image name="map" width="534" height="360"/>
+        <image name="sniper" width="600" height="520"/>
+        <image name="tacticalSpike" width="188" height="188"/>
         <image name="zombie1" width="800" height="1067"/>
         <image name="zombie2" width="800" height="1067"/>
         <image name="zombie3" width="800" height="1067"/>
