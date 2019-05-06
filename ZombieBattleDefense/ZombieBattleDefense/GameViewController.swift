@@ -27,13 +27,15 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let scene = GameScene(size: view.bounds.size)
-        let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
-        skView.ignoresSiblingOrder = true
-        scene.scaleMode = .resizeFill
-        skView.presentScene(scene)
+        //let scene = GameScene(size: view.bounds.size)
+        //let skView = view as! SKView
+        //skView.showsFPS = true
+        //skView.showsNodeCount = true
+        //skView.ignoresSiblingOrder = true
+        //scene.scaleMode = .resizeFill
+        //skView.presentScene(scene)
+        lives = 100
+        jCash = 500
     }
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
