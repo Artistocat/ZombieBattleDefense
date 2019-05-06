@@ -17,7 +17,9 @@ class BrowseViewController: UIViewController{
         print("Has browse")
         
         self.appDelegate.mpcManager.valueWasChanged = {
-            self.performSegue(withIdentifier: "JoinGame", sender: nil)
+             DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "JoinGame", sender: nil)
+            }
         }
         // Do any additional setup after loading the view.
     }

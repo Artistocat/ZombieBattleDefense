@@ -17,7 +17,9 @@ class AdvertiseViewController: UIViewController{
         appDelegate.mpcManager.serviceAdvertiser.startAdvertisingPeer()
         print("Has advertise")
         self.appDelegate.mpcManager.valueWasChanged = {
+             DispatchQueue.main.async {
             self.performSegue(withIdentifier: "HostGame", sender: nil)
+            }
         }
         // Do any additional setup after loading the view.
     }
