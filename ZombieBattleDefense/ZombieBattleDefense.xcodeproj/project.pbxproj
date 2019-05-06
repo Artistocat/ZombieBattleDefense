@@ -164,8 +164,8 @@
                 34BAB40C2267AB0E004C052E /* ViewController.swift in Sources */,
                 34BAB40A2267AB0E004C052E /* AppDelegate.swift in Sources */,
                 638DECE6226F991800D027C1 /* Tower.swift in Sources */,
-				346B83EB227B700100E66F24 /* Zombie.swift in Sources */,
-				D92B621422723FFD00BBFD21 /* BrowseViewController.swift in Sources */,
+                346B83EB227B700100E66F24 /* Zombie.swift in Sources */,
+                D92B621422723FFD00BBFD21 /* BrowseViewController.swift in Sources */,
             );
             runOnlyForDeploymentPostprocessing = 0;
         };

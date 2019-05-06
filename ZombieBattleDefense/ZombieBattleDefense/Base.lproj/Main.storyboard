@@ -82,7 +82,7 @@
         <!--Game-->
         <scene sceneID="0Tn-nw-PCI">
             <objects>
-                <viewController title="Game" id="LeK-c2-Qn4" sceneMemberID="viewController">
+                <viewController title="Game" id="LeK-c2-Qn4" customClass="GameViewController" customModule="ZombieBattleDefense" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xRX-6B-aa8">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +172,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="VYf-gF-7nM"/>
                                                 </constraints>
                                                 <state key="normal" image="zombie1"/>
+                                                <connections>
+                                                    <action selector="zombie1:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="pBe-5c-VVF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLy-Rt-W4d">
                                                 <rect key="frame" x="0.0" y="60" width="60" height="60"/>
@@ -180,6 +183,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="c79-il-SM8"/>
                                                 </constraints>
                                                 <state key="normal" title="zombie2" image="zombie2"/>
+                                                <connections>
+                                                    <action selector="zombie2:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="ceg-pY-8aj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcT-rW-myO">
                                                 <rect key="frame" x="0.0" y="120" width="60" height="60"/>
@@ -188,6 +194,9 @@
                                                     <constraint firstAttribute="height" constant="60" id="MJV-8d-YM5"/>
                                                 </constraints>
                                                 <state key="normal" title="zombie3" image="zombie3"/>
+                                                <connections>
+                                                    <action selector="zombie3:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="l1a-7V-vxk"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ro0-kb-hig">
                                                 <rect key="frame" x="0.0" y="180" width="60" height="60"/>
@@ -196,6 +205,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="ci2-VQ-bUM"/>
                                                 </constraints>
                                                 <state key="normal" title="zombie4" image="zombie4"/>
+                                                <connections>
+                                                    <action selector="zombie4:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="etk-tl-gbB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nW-xL-rbW">
                                                 <rect key="frame" x="0.0" y="240" width="60" height="60"/>
@@ -204,6 +216,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="z3X-q3-kJr"/>
                                                 </constraints>
                                                 <state key="normal" title="zombie5" image="zombie5"/>
+                                                <connections>
+                                                    <action selector="zombie5:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="txD-aA-UFn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfo-68-UEh">
                                                 <rect key="frame" x="0.0" y="300" width="60" height="60"/>
@@ -212,6 +227,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="kkb-l8-5xA"/>
                                                 </constraints>
                                                 <state key="normal" title="zombie6" image="zombie6"/>
+                                                <connections>
+                                                    <action selector="zombie6:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="CxG-qI-gIK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -221,10 +239,40 @@
                                 <rect key="frame" x="133" y="15" width="534" height="360"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJs-Pn-1Wn">
+                                <rect key="frame" x="547" y="15" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IwB-sB-VWE"/>
+                                    <constraint firstAttribute="width" constant="100" id="tkr-rO-8qV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lives" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-MU-UVP">
+                                <rect key="frame" x="439" y="15" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ai3-pz-EHX"/>
+                                    <constraint firstAttribute="width" constant="100" id="lFo-xe-ph3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9O1-o4-ciV" firstAttribute="trailing" secondItem="SJs-Pn-1Wn" secondAttribute="trailing" constant="20" id="2Ue-ay-6Gm"/>
+                            <constraint firstItem="SJs-Pn-1Wn" firstAttribute="top" secondItem="9O1-o4-ciV" secondAttribute="top" constant="15" id="AB9-s3-jU5"/>
+                            <constraint firstItem="SJs-Pn-1Wn" firstAttribute="leading" secondItem="cAd-MU-UVP" secondAttribute="trailing" constant="8" id="TsR-bG-XcZ"/>
+                            <constraint firstItem="cAd-MU-UVP" firstAttribute="top" secondItem="9O1-o4-ciV" secondAttribute="top" constant="15" id="pof-Yt-rYV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9O1-o4-ciV"/>
                     </view>
+                    <connections>
+                        <outlet property="livesLabel" destination="cAd-MU-UVP" id="wbc-ct-Df4"/>
+                        <outlet property="moneyLabel" destination="SJs-Pn-1Wn" id="fcM-Bm-Hxd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOK-wz-JRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="74U-P6-cqJ"/>
@@ -255,6 +303,6 @@
         <image name="zombie6" width="800" height="1067"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EOX-gA-PXf"/>
+        <segue reference="muX-bG-Dtw"/>
     </inferredMetricsTieBreakers>
 </document>
