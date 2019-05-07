@@ -1,0 +1,2 @@
+Note to self: zombieService in gameViewController is different from previous zombie service. we do have a phantom session.
+Fix this then try to transmit again.
