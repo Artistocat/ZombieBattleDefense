@@ -16,12 +16,16 @@ class GameViewController: UIViewController {
     var towers = [Tower]()
     var jCash = 500 {
         didSet {
-            moneyLabel.text = "\(jCash)"
+            DispatchQueue.main.async {
+                self.moneyLabel.text = "\(self.jCash)"
+            }
         }
     }
     var lives = 100 {
         didSet {
-            livesLabel.text = "\(lives)"
+            DispatchQueue.main.async {
+                self.livesLabel.text = "\(self.lives)"
+            }
         }
     }
     
