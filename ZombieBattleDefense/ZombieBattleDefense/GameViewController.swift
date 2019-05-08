@@ -10,7 +10,8 @@ import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-    let zombieService = ZombieService()
+    //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
     var zombies = [Zombie]()
     var towers = [Tower]()
     var jCash = 500 {
@@ -36,6 +37,11 @@ class GameViewController: UIViewController {
         //skView.presentScene(scene)
         lives = 100
         jCash = 500
+        zombieService.zombieGot = {
+            self.zombieReceived(manager: self.zombieService, zombieString: self.zombieService.dataFlopper)
+        }
+            
+        
     }
     @IBOutlet weak var livesLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
@@ -98,6 +104,8 @@ extension GameViewController : ZombieServiceDelegate {
         
         let speed = Int(speedStr)
         let health = Int(healthStr)
+        print("zRecieved")
         zombies.append(Zombie(health: health!, speed: speed!))
+        lives-=5
     }
 }

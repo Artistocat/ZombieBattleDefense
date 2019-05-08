@@ -14,8 +14,14 @@ protocol ZombieServiceDelegate {
     func zombieReceived(manager : ZombieService, zombieString: String)
 }
 class ZombieService: NSObject{
-    
-    
+    var dataFlopper:String = ""
+    {
+       didSet
+       {
+         zombieGot?()
+        }
+    }
+    var zombieGot: (()->())?
     var delegate: ZombieServiceDelegate?
     var valueWasChanged: (()->())?
     var connected:Bool{
@@ -26,6 +32,7 @@ class ZombieService: NSObject{
     //data is sent
     func send(zombieString:String)
     {
+        print(session)
         NSLog("%@", "zombieData: \(zombieString) to \(session.connectedPeers.count) peers")
         if session.connectedPeers.count > 0 {
             do{
@@ -88,7 +95,7 @@ extension ZombieService: MCSessionDelegate{
         NSLog("%@", "didReceiveData: \(data.count) bytes")
         
         let str = String(data: data, encoding: .utf8)!
-        self.delegate?.zombieReceived(manager: self, zombieString: str)
+        dataFlopper=str
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
