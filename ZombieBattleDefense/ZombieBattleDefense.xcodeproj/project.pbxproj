@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3401CB64226F94A3005D1C13 /* zombieString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401CB63226F94A3005D1C13 /* zombieString.swift */; };
+		3401CB64226F94A3005D1C13 /* ZombieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401CB63226F94A3005D1C13 /* ZombieService.swift */; };
 		346B83EB227B700100E66F24 /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B83EA227B700100E66F24 /* Zombie.swift */; };
 		34AF9BFD2278D1DC00898DDC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AF9BFC2278D1DC00898DDC /* GameScene.swift */; };
 		34BAB40A2267AB0E004C052E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BAB4092267AB0E004C052E /* AppDelegate.swift */; };
@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3401CB63226F94A3005D1C13 /* zombieString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = zombieString.swift; sourceTree = "<group>"; };
+		3401CB63226F94A3005D1C13 /* ZombieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieService.swift; sourceTree = "<group>"; };
 		346B83EA227B700100E66F24 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zombie.swift; path = ZombieBattleDefense/Zombie.swift; sourceTree = "<group>"; };
 		34AF9BFC2278D1DC00898DDC /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		34BAB4062267AB0E004C052E /* ZombieBattleDefense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieBattleDefense.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				34BAB4092267AB0E004C052E /* AppDelegate.swift */,
-				3401CB63226F94A3005D1C13 /* zombieString.swift */,
+				3401CB63226F94A3005D1C13 /* ZombieService.swift */,
 				34BAB40B2267AB0E004C052E /* ViewController.swift */,
 				34AF9BFC2278D1DC00898DDC /* GameScene.swift */,
 				638DECE5226F991800D027C1 /* Tower.swift */,
@@ -158,7 +158,7 @@
 			files = (
 				34AF9BFD2278D1DC00898DDC /* GameScene.swift in Sources */,
 				34E7909122723259005F0AE3 /* GameViewController.swift in Sources */,
-				3401CB64226F94A3005D1C13 /* zombieString.swift in Sources */,
+				3401CB64226F94A3005D1C13 /* ZombieService.swift in Sources */,
 				D92B62122272364E00BBFD21 /* AdvertiseViewController.swift in Sources */,
 				34BAB40C2267AB0E004C052E /* ViewController.swift in Sources */,
 				34BAB40A2267AB0E004C052E /* AppDelegate.swift in Sources */,
