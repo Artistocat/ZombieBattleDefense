@@ -14,15 +14,22 @@ protocol ZombieServiceDelegate {
     func zombieReceived(manager : ZombieService, zombieString: String)
 }
 class ZombieService: NSObject{
+    
     var dataFlopper:String = ""
     {
        didSet
        {
-         zombieGot?()
+            zombieGot?()
         }
     }
     var zombieGot: (()->())?
     var delegate: ZombieServiceDelegate?
+    var endGame:(()->())?
+    var connection:Bool{
+        didSet{
+            endGame?()
+        }
+    }
     var valueWasChanged: (()->())?
     var connected:Bool{
         didSet{
@@ -32,13 +39,13 @@ class ZombieService: NSObject{
     //data is sent
     func send(zombieString:String)
     {
-        print(session)
-        NSLog("%@", "zombieData: \(zombieString) to \(session.connectedPeers.count) peers")
+        print("zombieData: \(zombieString) to \(session.connectedPeers.count) peers")
+       
         if session.connectedPeers.count > 0 {
             do{
                 try self.session.send(zombieString.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
             } catch let error{
-                NSLog("%@", "Error for sending: \(error)")
+                
             }
         }
     }
@@ -59,16 +66,13 @@ class ZombieService: NSObject{
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: ["name":myPeerId.displayName], serviceType: ZombieServiceType)
         self.serviceBrowser = MCNearbyServiceBrowser(peer: myPeerId, serviceType: /*may change later*/ZombieServiceType)
         connected=false
+        connection=true
         super.init()
         self.serviceAdvertiser.delegate = self
-        //self.serviceAdvertiser.startAdvertisingPeer()
-        
         self.serviceBrowser.delegate=self
-        //self.serviceBrowser.startBrowsingForPeers()
     }
     deinit{
-        //self.serviceAdvertiser.stopAdvertisingPeer()
-        //self.serviceBrowser.stopBrowsingForPeers()
+
     }
 }
 extension ZombieService: MCSessionDelegate{
@@ -85,6 +89,7 @@ extension ZombieService: MCSessionDelegate{
             print("Connecting to session: \(session)")
         default:
             print("Did not connect to session: \(session)")
+            connection = !connection
         }
         self.delegate?.connectedDevicesChanged(manager: self, connectedDevices:
             session.connectedPeers.map{$0.displayName})
@@ -92,33 +97,30 @@ extension ZombieService: MCSessionDelegate{
    
     //data is received
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        NSLog("%@", "didReceiveData: \(data.count) bytes")
         
         let str = String(data: data, encoding: .utf8)!
         dataFlopper=str
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
-        NSLog("%@", "didReceiveStream")
     }
     
     func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
-        NSLog("%@", "didStartReceivingResourceWithName")
+  
     }
     
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
-        NSLog("%@", "didFinishReceivingResourceWithName")
+ 
     }
 
 }
 extension ZombieService: MCNearbyServiceAdvertiserDelegate
 {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser,didNotStartAdvertisingPeer error: Error){
-        NSLog("%@", "didNotStartAdvertisingPeer: \(error)")
+      
     }
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping(Bool, MCSession?)-> Void){
         print("got invitation")
-        //NSLog("%@", "didReceiveInvitationFromPeer \(peerID)")
         invitationHandler(true, self.session)
         
         //AdvertiseViewController.connected(PeerID: peerID)
@@ -128,7 +130,7 @@ extension ZombieService: MCNearbyServiceAdvertiserDelegate
 extension ZombieService : MCNearbyServiceBrowserDelegate
 {
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error){
-        NSLog("%@", "didNotStartBrowsingForPeers: \(error)")
+
     }
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         print("found advertiser")

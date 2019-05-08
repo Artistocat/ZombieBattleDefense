@@ -11,9 +11,10 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     //let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
+    var zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
     var zombies = [Zombie]()
     var towers = [Tower]()
+    
     var jCash = 500 {
         didSet {
             DispatchQueue.main.async {
@@ -25,6 +26,10 @@ class GameViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.livesLabel.text = "\(self.lives)"
+                if self.lives<=0
+                {
+                    self.zombieService.session.disconnect()
+                }
             }
         }
     }
@@ -44,7 +49,13 @@ class GameViewController: UIViewController {
         zombieService.zombieGot = {
             self.zombieReceived(manager: self.zombieService, zombieString: self.zombieService.dataFlopper)
         }
-            
+        zombieService.endGame = {
+             DispatchQueue.main.async {
+            self.zombieService=ZombieService()
+            print((UIApplication.shared.delegate as! AppDelegate).mpcManager!.session)
+            self.performSegue(withIdentifier: "Return", sender: nil)
+            }
+        }
         
     }
     @IBOutlet weak var livesLabel: UILabel!
@@ -108,7 +119,7 @@ extension GameViewController : ZombieServiceDelegate {
         
         let speed = Int(speedStr)
         let health = Int(healthStr)
-        print("zRecieved")
+        //print("zRecieved")
         zombies.append(Zombie(health: health!, speed: speed!))
         lives-=5
     }

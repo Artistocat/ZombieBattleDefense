@@ -272,6 +272,7 @@
                     <connections>
                         <outlet property="livesLabel" destination="cAd-MU-UVP" id="wbc-ct-Df4"/>
                         <outlet property="moneyLabel" destination="SJs-Pn-1Wn" id="fcM-Bm-Hxd"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Return" id="T8W-hu-9h3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOK-wz-JRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,11 +293,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="305" height="165"/>
+        <image name="Cannon" width="16" height="16"/>
         <image name="gunTower" width="185" height="272"/>
         <image name="landmine" width="231" height="218"/>
-        <image name="machineGun" width="900" height="580"/>
-        <image name="map" width="534" height="360"/>
+        <image name="machineGun" width="16" height="16"/>
+        <image name="map" width="611" height="360"/>
         <image name="sniper" width="600" height="520"/>
         <image name="tacticalSpike" width="188" height="188"/>
         <image name="zombie1" width="800" height="1067"/>
@@ -307,6 +308,6 @@
         <image name="zombie6" width="800" height="1067"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="muX-bG-Dtw"/>
+        <segue reference="EOX-gA-PXf"/>
     </inferredMetricsTieBreakers>
 </document>
