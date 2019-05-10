@@ -293,10 +293,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="16" height="16"/>
+        <image name="Cannon" width="92" height="50"/>
         <image name="gunTower" width="185" height="272"/>
         <image name="landmine" width="231" height="218"/>
-        <image name="machineGun" width="16" height="16"/>
+        <image name="machineGun" width="512" height="512"/>
         <image name="map" width="611" height="360"/>
         <image name="sniper" width="600" height="520"/>
         <image name="tacticalSpike" width="188" height="188"/>
