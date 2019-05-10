@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     let zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
     var zombies = [Zombie]()
     var towers = [Tower]()
+    
     var jCash = 500 {
         didSet {
             DispatchQueue.main.async {
@@ -26,6 +27,10 @@ class GameViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.livesLabel.text = "\(self.lives)"
+                if self.lives<=0
+                {
+                    self.zombieService.session.disconnect()
+                }
             }
         }
     }
@@ -60,7 +65,13 @@ class GameViewController: UIViewController {
         zombieService.zombieGot = {
             self.zombieReceived(manager: self.zombieService, zombieString: self.zombieService.dataFlopper)
         }
-            
+        zombieService.endGame = {
+             DispatchQueue.main.async {
+            self.zombieService=ZombieService()
+            print((UIApplication.shared.delegate as! AppDelegate).mpcManager!.session)
+            self.performSegue(withIdentifier: "Return", sender: nil)
+            }
+        }
         
     }
     @IBOutlet weak var livesLabel: UILabel!

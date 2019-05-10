@@ -272,6 +272,7 @@
                     <connections>
                         <outlet property="livesLabel" destination="cAd-MU-UVP" id="wbc-ct-Df4"/>
                         <outlet property="moneyLabel" destination="SJs-Pn-1Wn" id="fcM-Bm-Hxd"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Return" id="T8W-hu-9h3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOK-wz-JRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,14 +289,14 @@
                 <tapGestureRecognizer id="Fxf-oP-bvp"/>
                 <tapGestureRecognizer id="syQ-jw-ev9"/>
             </objects>
-            <point key="canvasLocation" x="806" y="940"/>
+            <point key="canvasLocation" x="805.54722638680664" y="940"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="16" height="16"/>
+        <image name="Cannon" width="92" height="50"/>
         <image name="gunTower" width="185" height="272"/>
         <image name="landmine" width="231" height="218"/>
-        <image name="machineGun" width="16" height="16"/>
+        <image name="machineGun" width="512" height="512"/>
         <image name="map" width="611" height="360"/>
         <image name="sniper" width="600" height="520"/>
         <image name="tacticalSpike" width="188" height="188"/>
@@ -307,6 +308,6 @@
         <image name="zombie6" width="800" height="1067"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="muX-bG-Dtw"/>
+        <segue reference="EOX-gA-PXf"/>
     </inferredMetricsTieBreakers>
 </document>
