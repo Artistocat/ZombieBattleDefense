@@ -11,6 +11,7 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var scene: GameScene
     let zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
     var zombies = [Zombie]()
     var towers = [Tower]()
@@ -29,16 +30,31 @@ class GameViewController: UIViewController {
         }
     }
     
+    convenience init() {
+        self.init(nibName: nil, bundle: nil)
+        
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.scene = GameScene()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        self.scene = GameScene(size: view.bounds.size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //let scene = GameScene(size: view.bounds.size)
-        //let skView = view as! SKView
-        //skView.showsFPS = true
-        //skView.showsNodeCount = true
-        //skView.ignoresSiblingOrder = true
-        //scene.scaleMode = .resizeFill
-        //skView.presentScene(scene)
+        let skView = view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .resizeFill
+        skView.presentScene(scene)
         lives = 100
         jCash = 500
         zombieService.zombieGot = {
@@ -108,8 +124,11 @@ extension GameViewController : ZombieServiceDelegate {
         
         let speed = Int(speedStr)
         let health = Int(healthStr)
-        print("zRecieved")
+        print("\(speed!)")
         zombies.append(Zombie(health: health!, speed: speed!))
+        if let speed = speed {
+            scene.addZombie(level: speed)
+        }
         lives-=5
     }
 }

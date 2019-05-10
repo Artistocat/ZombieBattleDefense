@@ -288,15 +288,15 @@
                 <tapGestureRecognizer id="Fxf-oP-bvp"/>
                 <tapGestureRecognizer id="syQ-jw-ev9"/>
             </objects>
-            <point key="canvasLocation" x="805.54722638680664" y="940"/>
+            <point key="canvasLocation" x="806" y="940"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="305" height="165"/>
+        <image name="Cannon" width="16" height="16"/>
         <image name="gunTower" width="185" height="272"/>
         <image name="landmine" width="231" height="218"/>
-        <image name="machineGun" width="900" height="580"/>
-        <image name="map" width="534" height="360"/>
+        <image name="machineGun" width="16" height="16"/>
+        <image name="map" width="611" height="360"/>
         <image name="sniper" width="600" height="520"/>
         <image name="tacticalSpike" width="188" height="188"/>
         <image name="zombie1" width="800" height="1067"/>
