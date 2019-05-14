@@ -11,6 +11,11 @@ import SpriteKit
 
 class GameViewController: UIViewController {
     //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var scene: GameScene? {
+        didSet {
+            print("Scene set")
+        }
+    }
     var zombieService = (UIApplication.shared.delegate as! AppDelegate).mpcManager!
     var zombies = [Zombie]()
     var towers = [Tower]()
@@ -34,26 +39,33 @@ class GameViewController: UIViewController {
         }
     }
     
+    convenience init() {
+        self.init(nibName: nil, bundle: nil)
+        scene = GameScene(size: view.bounds.size)
+        print("This happens")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //let scene = GameScene(size: view.bounds.size)
-        //let skView = view as! SKView
-        //skView.showsFPS = true
-        //skView.showsNodeCount = true
-        //skView.ignoresSiblingOrder = true
-        //scene.scaleMode = .resizeFill
-        //skView.presentScene(scene)
+        scene = GameScene(size: view.bounds.size)
+        guard let scene = scene else { return }
+        let skView = view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .resizeFill
+        skView.presentScene(scene)
         lives = 100
         jCash = 500
         zombieService.zombieGot = {
             self.zombieReceived(manager: self.zombieService, zombieString: self.zombieService.dataFlopper)
         }
         zombieService.endGame = {
-             DispatchQueue.main.async {
-            self.zombieService=ZombieService()
-            print((UIApplication.shared.delegate as! AppDelegate).mpcManager!.session)
-            self.performSegue(withIdentifier: "Return", sender: nil)
+            DispatchQueue.main.async {
+                self.zombieService=ZombieService()
+                print((UIApplication.shared.delegate as! AppDelegate).mpcManager!.session)
+                self.performSegue(withIdentifier: "Return", sender: nil)
             }
         }
         
@@ -64,7 +76,7 @@ class GameViewController: UIViewController {
     let zombieMultiplier = 1
     func sendZombie(speed: Int, health: Int) {
         jCash -= 100 * (speed + health)
-        zombieService.send(zombieString: "s\(speed)h\(health)")
+        zombieService.send(zombieString: "\(speed)")
     }
     
     @IBAction func zombie1(_ sender: UIButton) {
@@ -98,6 +110,10 @@ extension GameViewController : ZombieServiceDelegate {
     func zombieReceived(manager: ZombieService, zombieString: String) {
         //TODO
         //zombieString will be formatted like so: s000h0000 where s stands for speed the zero's can be any number with any length which is the speed and h representing the health in much the same way
+        guard let scene = scene else {
+            print("we fucked up")
+            return
+        }
         var speedStr = ""
         var healthStr = ""
         var passedH = false
@@ -119,8 +135,16 @@ extension GameViewController : ZombieServiceDelegate {
         
         let speed = Int(speedStr)
         let health = Int(healthStr)
-        //print("zRecieved")
-        zombies.append(Zombie(health: health!, speed: speed!))
+        let level = Int(zombieString)
+        //print("\(speed!)")
+        //zombies.append(Zombie(health: health!, speed: speed!))
+        print("We are able to do something")
+        print("This thing is \(zombieString)")
+        if let level = level {
+            print("We're doing this thing")
+            scene.addZombie(level: level)
+            print("we are addding zombie")
+        }
         lives-=5
     }
 }
