@@ -329,7 +329,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="92" height="50"/>
+        <image name="Cannon" width="0.0" height="0.0"/>
         <image name="Main Menu" width="1332" height="850"/>
         <image name="Searching for partner" width="2560" height="1440"/>
         <image name="gunTower" width="185" height="272"/>
