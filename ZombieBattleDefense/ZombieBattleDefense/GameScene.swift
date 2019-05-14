@@ -29,5 +29,38 @@
 import SpriteKit
 
 class GameScene: SKScene {
-    
+    func addZombie(level: Int){
+        let zombie = SKSpriteNode(imageNamed: "zombie\(level)")
+        
+        var yLoc = size.height * 44 / 360
+        
+        zombie.position = CGPoint(x: 0 - zombie.size.width / 2, y: yLoc)
+        
+        addChild(zombie)
+        var xLoc = size.width * 190 / 611
+        let actualDuration = level
+        var movementArr = [SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration))]
+        yLoc = size.height * 128 / 360
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        xLoc = size.width * 72 / 611
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        yLoc = size.height * 300 / 360
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        xLoc = size.width * 242 / 611
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        yLoc = size.height * 152 / 360
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        xLoc = size.width * 280 / 611
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        yLoc = size.height * 54 / 360
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        xLoc = size.width * 338 / 611
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        yLoc = size.height * 268 / 360
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        xLoc = size.width + zombie.size.width / 2
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.removeFromParent())
+        zombie.run(SKAction.sequence(movementArr))
+    }
 }
