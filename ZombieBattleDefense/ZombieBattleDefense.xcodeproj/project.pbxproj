@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3401CB63226F94A3005D1C13 /* ZombieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZombieService.swift; sourceTree = "<group>"; };
-		346B83EA227B700100E66F24 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zombie.swift; path = ZombieBattleDefense/Zombie.swift; sourceTree = "<group>"; };
+		346B83EA227B700100E66F24 /* Zombie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
 		34AF9BFC2278D1DC00898DDC /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		34BAB4062267AB0E004C052E /* ZombieBattleDefense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieBattleDefense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BAB4092267AB0E004C052E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +52,6 @@
 		34BAB3FD2267AB0E004C052E = {
 			isa = PBXGroup;
 			children = (
-				346B83EA227B700100E66F24 /* Zombie.swift */,
 				34BAB4082267AB0E004C052E /* ZombieBattleDefense */,
 				34BAB4072267AB0E004C052E /* Products */,
 			);
@@ -69,6 +68,7 @@
 		34BAB4082267AB0E004C052E /* ZombieBattleDefense */ = {
 			isa = PBXGroup;
 			children = (
+				346B83EA227B700100E66F24 /* Zombie.swift */,
 				34BAB4092267AB0E004C052E /* AppDelegate.swift */,
 				3401CB63226F94A3005D1C13 /* ZombieService.swift */,
 				34BAB40B2267AB0E004C052E /* ViewController.swift */,
@@ -311,14 +311,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6CBK46J4M3;
+				DEVELOPMENT_TEAM = D8R798379S;
 				INFOPLIST_FILE = ZombieBattleDefense/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AaronWheeler2.ZombieBattleDefense;
+				PRODUCT_BUNDLE_IDENTIFIER = VenkataVinnakota.ZombieBattleDefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,14 +330,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6CBK46J4M3;
+				DEVELOPMENT_TEAM = D8R798379S;
 				INFOPLIST_FILE = ZombieBattleDefense/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AaronWheeler2.ZombieBattleDefense;
+				PRODUCT_BUNDLE_IDENTIFIER = VenkataVinnakota.ZombieBattleDefense;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -29,37 +29,44 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var background = SKSpriteNode(imageNamed: "map")
+    
+    override func didMove(to view: SKView) {
+        scaleMode = SKSceneScaleMode.resizeFill
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
+    }
+    
     func addZombie(level: Int){
         let zombie = SKSpriteNode(imageNamed: "zombie\(level)")
         
         var yLoc = size.height * 44 / 360
-        
+        zombie.zPosition = 99
         zombie.position = CGPoint(x: 0 - zombie.size.width / 2, y: yLoc)
         
         addChild(zombie)
         var xLoc = size.width * 190 / 611
-        let actualDuration = level
-        var movementArr = [SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration))]
+        var movementArr = [SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval((Int)(190 + zombie.size.width / 2) / level))]
         yLoc = size.height * 128 / 360
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(128 / level)))
         xLoc = size.width * 72 / 611
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(72 / level)))
         yLoc = size.height * 300 / 360
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(300 / level)))
         xLoc = size.width * 242 / 611
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(242 / level)))
         yLoc = size.height * 152 / 360
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(152 / level)))
         xLoc = size.width * 280 / 611
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(280 / level)))
         yLoc = size.height * 54 / 360
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(54 / level)))
         xLoc = size.width * 338 / 611
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(338 / level)))
         yLoc = size.height * 268 / 360
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval(268 / level)))
         xLoc = size.width + zombie.size.width / 2
-        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: yLoc), duration: TimeInterval(actualDuration)))
+        movementArr.append(SKAction.move(to: CGPoint(x: xLoc, y: size.height - yLoc), duration: TimeInterval((Int)(size.width + zombie.size.width / 2) / level)))
         movementArr.append(SKAction.removeFromParent())
         zombie.run(SKAction.sequence(movementArr))
     }
