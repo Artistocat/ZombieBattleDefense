@@ -333,7 +333,7 @@
         <image name="machineGun" width="512" height="512"/>
         <image name="sniper" width="600" height="520"/>
         <image name="tacticalSpike" width="188" height="188"/>
-        <image name="zombie1" width="800" height="1067"/>
+        <image name="zombie1" width="5" height="7"/>
         <image name="zombie2" width="800" height="1067"/>
         <image name="zombie3" width="800" height="1067"/>
         <image name="zombie4" width="800" height="1067"/>
@@ -341,6 +341,6 @@
         <image name="zombie6" width="800" height="1067"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="muX-bG-Dtw"/>
+        <segue reference="EOX-gA-PXf"/>
     </inferredMetricsTieBreakers>
 </document>
