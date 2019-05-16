@@ -51,11 +51,13 @@ class GameViewController: UIViewController {
         scene = GameScene(size: view.bounds.size)
         guard let scene = scene else { return }
         let skView = view as! SKView
+        
         skView.showsFPS = true
         skView.showsNodeCount = true
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .resizeFill
         skView.presentScene(scene)
+        
         lives = 100
         jCash = 500
         zombieService.zombieGot = {

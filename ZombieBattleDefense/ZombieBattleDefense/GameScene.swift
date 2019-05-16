@@ -33,7 +33,7 @@ class GameScene: SKScene {
         let zombie = SKSpriteNode(imageNamed: "zombie\(level)")
         
         var yLoc = size.height * 44 / 360
-        
+        zombie.zPosition = 99
         zombie.position = CGPoint(x: 0 - zombie.size.width / 2, y: yLoc)
         
         addChild(zombie)
