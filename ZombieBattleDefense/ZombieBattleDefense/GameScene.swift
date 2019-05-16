@@ -29,6 +29,14 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    var background = SKSpriteNode(imageNamed: "map")
+    
+    override func didMove(to view: SKView) {
+        scaleMode = SKSceneScaleMode.resizeFill
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
+    }
+    
     func addZombie(level: Int){
         let zombie = SKSpriteNode(imageNamed: "zombie\(level)")
         
