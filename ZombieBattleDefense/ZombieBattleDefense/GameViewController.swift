@@ -100,6 +100,101 @@ class GameViewController: UIViewController {
         sendZombie(speed: 6 * zombieMultiplier, health: 6 * zombieMultiplier)
     }
     
+    var machineGun = false
+    var gunTower = false
+    var cannon = false
+    var landmine = false
+    var sniper = false
+    var tacticalSpike = false
+    
+    @IBAction func machineGunTapped(_ sender: UIButton) {
+        print("machine gun tapped")
+        machineGun = !machineGun
+        gunTower = false
+        cannon = false
+        landmine = false
+        sniper = false
+        tacticalSpike = false
+    }
+    
+    @IBAction func gunTowerTapped(_ sender: UIButton) {
+        print("gun tower tapped")
+        gunTower = !gunTower
+        machineGun = false
+        cannon = false
+        landmine = false
+        sniper = false
+        tacticalSpike = false
+    }
+    @IBAction func cannonTapped(_ sender: UIButton) {
+        print("cannon tapped")
+        cannon = !cannon
+        machineGun = false
+        gunTower = false
+        landmine = false
+        sniper = false
+        tacticalSpike = false
+    }
+    @IBAction func landmineTapped(_ sender: UIButton) {
+        print("landmine tapped")
+        landmine = !landmine
+        machineGun = false
+        gunTower = false
+        cannon = false
+        sniper = false
+        tacticalSpike = false
+    }
+    @IBAction func sniperTapped(_ sender: UIButton) {
+        print("sniper tapped")
+        sniper = !sniper
+        machineGun = false
+        gunTower = false
+        cannon = false
+        landmine = false
+        tacticalSpike = false
+    }
+    @IBAction func tacticalSpikeTapped(_ sender: UIButton) {
+        print("spike tappped")
+        tacticalSpike = !tacticalSpike
+        machineGun = false
+        gunTower = false
+        cannon = false
+        landmine = false
+        sniper = false
+    }
+    @IBAction func screenTap(_ sender: UITapGestureRecognizer) {
+        guard let scene = scene else {return}
+        guard sender.state == .ended else {return}
+        let x = sender.location(in: sender.view).x
+        let y = sender.location(in: sender.view).y
+        if machineGun {
+            scene.placeMachineGun(x: x, y: y)
+            print("machineGun")
+        }
+        if gunTower {
+            scene.placeGunTower(x: x, y: y)
+            print("gunTower")
+        }
+        if cannon {
+            scene.placeCannon(x: x, y: y)
+            print("cannon")
+        }
+        if landmine {
+            scene.placeLandmine(x: x, y: y)
+            print("landmine")
+        }
+        if sniper {
+            scene.placeSniper(x: x, y: y)
+            print("sniper")
+        }
+        if tacticalSpike {
+            scene.placeTacticalSpike(x: x, y: y)
+            print("tacticalSpike")
+        }
+        print("screenTapped x: \(x) y: \(y)")
+        scene.placeSniper(x: x, y: y)
+    }
+    
 }
 extension GameViewController : ZombieServiceDelegate {
     

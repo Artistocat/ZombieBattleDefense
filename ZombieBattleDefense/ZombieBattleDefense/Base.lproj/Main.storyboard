@@ -293,6 +293,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9O1-o4-ciV" firstAttribute="trailing" secondItem="SJs-Pn-1Wn" secondAttribute="trailing" constant="20" id="2Ue-ay-6Gm"/>
                             <constraint firstItem="SJs-Pn-1Wn" firstAttribute="top" secondItem="9O1-o4-ciV" secondAttribute="top" constant="15" id="AB9-s3-jU5"/>
@@ -300,6 +301,9 @@
                             <constraint firstItem="cAd-MU-UVP" firstAttribute="top" secondItem="9O1-o4-ciV" secondAttribute="top" constant="15" id="pof-Yt-rYV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9O1-o4-ciV"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="UXT-id-py3" appends="YES" id="ImS-Bd-tgb"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="livesLabel" destination="cAd-MU-UVP" id="wbc-ct-Df4"/>
@@ -308,18 +312,41 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOK-wz-JRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="74U-P6-cqJ"/>
-                <tapGestureRecognizer id="ype-3u-ZDH"/>
-                <tapGestureRecognizer id="RBx-dz-2Jg"/>
-                <tapGestureRecognizer id="T2I-68-5eD"/>
-                <tapGestureRecognizer id="GjM-qq-NQC"/>
-                <tapGestureRecognizer id="OSN-Xc-i0m"/>
-                <tapGestureRecognizer id="cml-gG-Gy9"/>
-                <tapGestureRecognizer id="mm3-Q2-MgC"/>
-                <tapGestureRecognizer id="crz-nN-BFu"/>
-                <tapGestureRecognizer id="Rno-tc-Rij"/>
-                <tapGestureRecognizer id="Fxf-oP-bvp"/>
-                <tapGestureRecognizer id="syQ-jw-ev9"/>
+                <tapGestureRecognizer id="74U-P6-cqJ">
+                    <connections>
+                        <action selector="machineGunTapped:" destination="LeK-c2-Qn4" id="QWd-ad-bPq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ype-3u-ZDH">
+                    <connections>
+                        <action selector="gunTowerTapped:" destination="LeK-c2-Qn4" id="3l6-ZJ-jgS"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="RBx-dz-2Jg">
+                    <connections>
+                        <action selector="cannonTapped:" destination="LeK-c2-Qn4" id="XvN-mc-syQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="T2I-68-5eD">
+                    <connections>
+                        <action selector="landmineTapped:" destination="LeK-c2-Qn4" id="Qsx-H7-tXA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="GjM-qq-NQC">
+                    <connections>
+                        <action selector="sniperTapped:" destination="LeK-c2-Qn4" id="Y4c-Q3-dfH"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OSN-Xc-i0m">
+                    <connections>
+                        <action selector="tacticalSpikeTapped:" destination="LeK-c2-Qn4" id="jsQ-W2-IH4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="UXT-id-py3">
+                    <connections>
+                        <action selector="screenTap:" destination="LeK-c2-Qn4" id="AbJ-KH-yOO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="805.54722638680664" y="940"/>
         </scene>
