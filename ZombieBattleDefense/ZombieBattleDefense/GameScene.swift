@@ -7,42 +7,49 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         scaleMode = SKSceneScaleMode.resizeFill
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        background.zPosition = 0
         addChild(background)
     }
     
     func placeMachineGun(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "machineGun")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
     
     func placeGunTower(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "gunTower")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
     
     func placeCannon(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "Cannon")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
     
     func placeLandmine(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "landmine")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
 
     func placeSniper(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "sniper")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
     
     func placeTacticalSpike(x: CGFloat, y: CGFloat) {
         let tower = SKSpriteNode(imageNamed: "tacticalSpike")
-        tower.position = CGPoint(x: x, y: y)
+        tower.position = CGPoint(x: x, y: size.height - y)
+        tower.zPosition = 90
         addChild(tower)
     }
     

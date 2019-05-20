@@ -192,7 +192,6 @@ class GameViewController: UIViewController {
             print("tacticalSpike")
         }
         print("screenTapped x: \(x) y: \(y)")
-        scene.placeSniper(x: x, y: y)
     }
     
 }

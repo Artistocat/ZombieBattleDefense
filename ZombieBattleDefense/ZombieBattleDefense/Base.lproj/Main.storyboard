@@ -130,72 +130,72 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jca-Ig-Zby">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="360"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gunTower" translatesAutoresizingMaskIntoConstraints="NO" id="NEX-4K-OkC">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-yK-nFM">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="MvT-si-JaW"/>
-                                                    <constraint firstAttribute="height" constant="60" id="xqF-n4-b6X"/>
+                                                    <constraint firstAttribute="height" constant="60" id="hzP-jP-bqU"/>
+                                                    <constraint firstAttribute="width" constant="60" id="nfa-Qr-4jj"/>
                                                 </constraints>
+                                                <state key="normal" title="gunTower" image="gunTower"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="ype-3u-ZDH" appends="YES" id="Sr5-qE-7MZ"/>
+                                                    <action selector="gunTowerTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="mbB-Cr-SP7"/>
                                                 </connections>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cannon" translatesAutoresizingMaskIntoConstraints="NO" id="MH0-pp-A2b">
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScT-Bf-GIC">
                                                 <rect key="frame" x="0.0" y="60" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="9Aa-3A-Svd"/>
-                                                    <constraint firstAttribute="height" constant="60" id="yF1-qy-Uaq"/>
+                                                    <constraint firstAttribute="height" constant="60" id="YVR-vc-9dI"/>
+                                                    <constraint firstAttribute="width" constant="60" id="p9x-oB-7CF"/>
                                                 </constraints>
+                                                <state key="normal" title="Cannon" image="Cannon"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="RBx-dz-2Jg" appends="YES" id="eWL-KT-bhM"/>
+                                                    <action selector="cannonTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="JSi-sZ-Hfq"/>
                                                 </connections>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="machineGun" translatesAutoresizingMaskIntoConstraints="NO" id="sa3-EI-KTU">
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5l-Cx-9gB">
                                                 <rect key="frame" x="0.0" y="120" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="5Cm-4d-wil"/>
-                                                    <constraint firstAttribute="height" constant="60" id="eU6-FH-a2g"/>
+                                                    <constraint firstAttribute="width" constant="60" id="jiE-31-4LF"/>
+                                                    <constraint firstAttribute="height" constant="60" id="pxT-gl-Nin"/>
                                                 </constraints>
+                                                <state key="normal" title="machineGun" image="machineGun"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="74U-P6-cqJ" appends="YES" id="QxH-Fh-CMw"/>
+                                                    <action selector="machineGunTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="3d7-c0-l1w"/>
                                                 </connections>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landmine" translatesAutoresizingMaskIntoConstraints="NO" id="YPc-bw-TNm">
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM1-qr-raf">
                                                 <rect key="frame" x="0.0" y="180" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="399-Wq-fY6"/>
-                                                    <constraint firstAttribute="width" constant="60" id="zZY-Kn-sgM"/>
+                                                    <constraint firstAttribute="width" constant="60" id="Si4-5l-IkG"/>
+                                                    <constraint firstAttribute="height" constant="60" id="in0-oK-4Mg"/>
                                                 </constraints>
+                                                <state key="normal" title="landmine" image="landmine"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="T2I-68-5eD" appends="YES" id="SIX-Zd-QOo"/>
+                                                    <action selector="landmineTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="1RC-tz-w7K"/>
                                                 </connections>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sniper" translatesAutoresizingMaskIntoConstraints="NO" id="ct3-mL-Vog">
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osU-EI-gwZ">
                                                 <rect key="frame" x="0.0" y="240" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="0P6-Ly-5aJ"/>
-                                                    <constraint firstAttribute="width" constant="60" id="4G2-bi-evu"/>
+                                                    <constraint firstAttribute="width" constant="60" id="POY-4h-pAG"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Yiw-Bb-dIm"/>
                                                 </constraints>
+                                                <state key="normal" title="sniper" image="sniper"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="GjM-qq-NQC" appends="YES" id="HgK-pf-ggF"/>
+                                                    <action selector="sniperTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="66l-MF-wyL"/>
                                                 </connections>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tacticalSpike" translatesAutoresizingMaskIntoConstraints="NO" id="eaz-CH-iPT">
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vz-zW-XoK">
                                                 <rect key="frame" x="0.0" y="300" width="60" height="60"/>
-                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="3lE-JL-z54"/>
-                                                    <constraint firstAttribute="width" constant="60" id="afO-yK-gz9"/>
+                                                    <constraint firstAttribute="width" constant="60" id="6nd-i3-Kpa"/>
+                                                    <constraint firstAttribute="height" constant="60" id="ExO-cK-Ero"/>
                                                 </constraints>
+                                                <state key="normal" title="tacticalSpike" image="tacticalSpike"/>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="OSN-Xc-i0m" appends="YES" id="YJF-5j-BJo"/>
+                                                    <action selector="tacticalSpikeTapped:" destination="LeK-c2-Qn4" eventType="touchUpInside" id="uKL-iw-Ofi"/>
                                                 </connections>
-                                            </imageView>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tou-Vh-hyQ">
@@ -312,36 +312,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOK-wz-JRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="74U-P6-cqJ">
-                    <connections>
-                        <action selector="machineGunTapped:" destination="LeK-c2-Qn4" id="QWd-ad-bPq"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="ype-3u-ZDH">
-                    <connections>
-                        <action selector="gunTowerTapped:" destination="LeK-c2-Qn4" id="3l6-ZJ-jgS"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="RBx-dz-2Jg">
-                    <connections>
-                        <action selector="cannonTapped:" destination="LeK-c2-Qn4" id="XvN-mc-syQ"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="T2I-68-5eD">
-                    <connections>
-                        <action selector="landmineTapped:" destination="LeK-c2-Qn4" id="Qsx-H7-tXA"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="GjM-qq-NQC">
-                    <connections>
-                        <action selector="sniperTapped:" destination="LeK-c2-Qn4" id="Y4c-Q3-dfH"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="OSN-Xc-i0m">
-                    <connections>
-                        <action selector="tacticalSpikeTapped:" destination="LeK-c2-Qn4" id="jsQ-W2-IH4"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="UXT-id-py3">
                     <connections>
                         <action selector="screenTap:" destination="LeK-c2-Qn4" id="AbJ-KH-yOO"/>
