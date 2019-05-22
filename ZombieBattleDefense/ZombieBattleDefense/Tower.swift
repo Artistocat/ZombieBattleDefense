@@ -96,6 +96,7 @@ class Tower: NSObject {
         {
             gunTowerVerify = true
         }
+        
     }
     func touchMachineGun(_ touches:Set<UITouch>, with event: UIEvent?)
     {
@@ -119,16 +120,16 @@ class Tower: NSObject {
         
     }
     
-    
-    
+var check = false
     //check if location is valid (not on the path)
-    func validLocation(location: CGPoint)
+    func validLocation(location: CGPoint) -> Bool
     {
-//       color = mapSprite.color
-//        if (color = UIGraphicsGetImageFromCurrentImageContext())
-//        {
-//
-//        }
+       if (location == mapSprite.position)
+       {
+           check = true
+        return check
+        }
+        return check
     }
     
     //location is updated for the placement, but is no longer updated once it is placed
