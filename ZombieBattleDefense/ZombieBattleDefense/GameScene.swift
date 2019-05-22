@@ -8,6 +8,7 @@ class GameScene: SKScene {
         scaleMode = SKSceneScaleMode.resizeFill
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         background.zPosition = 0
+        background.scale(to: self.size)
         addChild(background)
     }
     

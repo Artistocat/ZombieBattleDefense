@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     var zombies = [Zombie]()
     var towers = [Tower]()
     
-    var jCash = 500 {
+    var jCash = 5000 {
         didSet {
             DispatchQueue.main.async {
                 self.moneyLabel.text = "\(self.jCash)"
@@ -77,8 +77,10 @@ class GameViewController: UIViewController {
     
     let zombieMultiplier = 1
     func sendZombie(speed: Int, health: Int) {
-        jCash -= 100 * (speed + health)
-        zombieService.send(zombieString: "\(speed)")
+        if jCash - 100 * (speed + health) > 0 {
+            jCash -= 100 * (speed + health)
+            zombieService.send(zombieString: "\(speed)")
+        }
     }
     
     @IBAction func zombie1(_ sender: UIButton) {
@@ -114,7 +116,6 @@ class GameViewController: UIViewController {
         landmine = false
         sniper = false
         tacticalSpike = false
-        sender.isHighlighted = machineGun
     }
     
     @IBAction func gunTowerTapped(_ sender: UIButton) {
@@ -124,7 +125,7 @@ class GameViewController: UIViewController {
         landmine = false
         sniper = false
         tacticalSpike = false
-        sender.isHighlighted = gunTower
+        sender.isSelected = gunTower
     }
     
     @IBAction func cannonTapped(_ sender: UIButton) {
@@ -134,7 +135,7 @@ class GameViewController: UIViewController {
         landmine = false
         sniper = false
         tacticalSpike = false
-        sender.isHighlighted = cannon
+        sender.isSelected = cannon
     }
     @IBAction func landmineTapped(_ sender: UIButton) {
         landmine = !landmine
@@ -143,9 +144,7 @@ class GameViewController: UIViewController {
         cannon = false
         sniper = false
         tacticalSpike = false
-        if landmine {
-            sender.tintColor = UIColor(red: 256, green: 256, blue: 256, alpha: 256)
-        }
+        sender.isSelected = landmine
     }
     @IBAction func sniperTapped(_ sender: UIButton) {
         sniper = !sniper
@@ -154,7 +153,7 @@ class GameViewController: UIViewController {
         cannon = false
         landmine = false
         tacticalSpike = false
-        sender.isHidden = sniper
+        sender.isSelected = sniper
     }
     @IBAction func tacticalSpikeTapped(_ sender: UIButton) {
         tacticalSpike = !tacticalSpike
@@ -163,36 +162,40 @@ class GameViewController: UIViewController {
         cannon = false
         landmine = false
         sniper = false
-        sender.isHighlighted = tacticalSpike
+        sender.isSelected = tacticalSpike
     }
     @IBAction func screenTap(_ sender: UITapGestureRecognizer) {
         guard let scene = scene else {return}
         guard sender.state == .ended else {return}
         let x = sender.location(in: sender.view).x
         let y = sender.location(in: sender.view).y
-        if machineGun {
-            scene.placeMachineGun(x: x, y: y)
-            print("machineGun")
-        }
-        if gunTower {
-            scene.placeGunTower(x: x, y: y)
-            print("gunTower")
-        }
-        if cannon {
-            scene.placeCannon(x: x, y: y)
-            print("cannon")
-        }
-        if landmine {
-            scene.placeLandmine(x: x, y: y)
-            print("landmine")
-        }
-        if sniper {
-            scene.placeSniper(x: x, y: y)
-            print("sniper")
-        }
-        if tacticalSpike {
-            scene.placeTacticalSpike(x: x, y: y)
-            print("tacticalSpike")
+        
+        if jCash - 25 >= 0 {
+            if machineGun {
+                scene.placeMachineGun(x: x, y: y)
+                print("machineGun")
+            }
+            if gunTower {
+                scene.placeGunTower(x: x, y: y)
+                print("gunTower")
+            }
+            if cannon {
+                scene.placeCannon(x: x, y: y)
+                print("cannon")
+            }
+            if landmine {
+                scene.placeLandmine(x: x, y: y)
+                print("landmine")
+            }
+            if sniper {
+                scene.placeSniper(x: x, y: y)
+                print("sniper")
+            }
+            if tacticalSpike {
+                scene.placeTacticalSpike(x: x, y: y)
+                print("tacticalSpike")
+            }
+            jCash -= 25
         }
         print("screenTapped x: \(x) y: \(y)")
     }
