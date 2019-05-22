@@ -20,6 +20,8 @@ class Tower: NSObject {
     
     let mapSprite = SKSpriteNode(imageNamed: "map")
     
+    //var locations = mapSprite.position
+    
     //Sprite Nodes
     
     let cannonSprite = SKSpriteNode(imageNamed: "Cannon")
@@ -114,10 +116,6 @@ class Tower: NSObject {
         guard let touch = touches.first else {return}
         location = touch.location(in: mapSprite)
         validLocation(location: location)
-    }
-    func found(location: CGPoint)
-    {
-        
     }
     
 var check = false
