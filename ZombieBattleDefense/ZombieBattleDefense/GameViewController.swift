@@ -108,59 +108,62 @@ class GameViewController: UIViewController {
     var tacticalSpike = false
     
     @IBAction func machineGunTapped(_ sender: UIButton) {
-        print("machine gun tapped")
         machineGun = !machineGun
         gunTower = false
         cannon = false
         landmine = false
         sniper = false
         tacticalSpike = false
+        sender.isHighlighted = machineGun
     }
     
     @IBAction func gunTowerTapped(_ sender: UIButton) {
-        print("gun tower tapped")
         gunTower = !gunTower
         machineGun = false
         cannon = false
         landmine = false
         sniper = false
         tacticalSpike = false
+        sender.isHighlighted = gunTower
     }
+    
     @IBAction func cannonTapped(_ sender: UIButton) {
-        print("cannon tapped")
         cannon = !cannon
         machineGun = false
         gunTower = false
         landmine = false
         sniper = false
         tacticalSpike = false
+        sender.isHighlighted = cannon
     }
     @IBAction func landmineTapped(_ sender: UIButton) {
-        print("landmine tapped")
         landmine = !landmine
         machineGun = false
         gunTower = false
         cannon = false
         sniper = false
         tacticalSpike = false
+        if landmine {
+            sender.tintColor = UIColor(red: 256, green: 256, blue: 256, alpha: 256)
+        }
     }
     @IBAction func sniperTapped(_ sender: UIButton) {
-        print("sniper tapped")
         sniper = !sniper
         machineGun = false
         gunTower = false
         cannon = false
         landmine = false
         tacticalSpike = false
+        sender.isHidden = sniper
     }
     @IBAction func tacticalSpikeTapped(_ sender: UIButton) {
-        print("spike tappped")
         tacticalSpike = !tacticalSpike
         machineGun = false
         gunTower = false
         cannon = false
         landmine = false
         sniper = false
+        sender.isHighlighted = tacticalSpike
     }
     @IBAction func screenTap(_ sender: UITapGestureRecognizer) {
         guard let scene = scene else {return}
