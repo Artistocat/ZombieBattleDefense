@@ -323,14 +323,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cannon" width="900" height="900"/>
+        <image name="Cannon" width="30" height="30"/>
         <image name="Main Menu" width="1332" height="850"/>
         <image name="Searching for partner" width="2560" height="1440"/>
-        <image name="gunTower" width="185" height="272"/>
-        <image name="landmine" width="231" height="218"/>
-        <image name="machineGun" width="512" height="512"/>
-        <image name="sniper" width="600" height="520"/>
-        <image name="tacticalSpike" width="188" height="188"/>
+        <image name="gunTower" width="30" height="30"/>
+        <image name="landmine" width="30" height="28"/>
+        <image name="machineGun" width="30" height="30"/>
+        <image name="sniper" width="30" height="26"/>
+        <image name="tacticalSpike" width="30" height="30"/>
         <image name="zombie1" width="30" height="41"/>
         <image name="zombie2" width="30" height="41"/>
         <image name="zombie3" width="30" height="40"/>
